@@ -1,5 +1,4 @@
 const { MessageEmbed  } = require('discord.js')
-const generateRandomColor = require('generate-random-color')
 const NewsAPI = require('newsapi')
 require('dotenv').config()
 
@@ -19,7 +18,7 @@ module.exports = {
                 const imageUrl = res.articles[0].urlToImage == null || res.articles[0].urlToImage == '' ? defaultImage : res.articles[0].urlToImage
                 const url = res.articles[0].url
                 const embed = {
-                    color: generateRandomColor.hex(),
+                    color: '#1C70C8',
                     title: title,
                     description: description,
                     image: {
@@ -31,9 +30,10 @@ module.exports = {
                     embeds: [embed],
                 })
             })
-            .catch((err) => {
+            .catch( err => {
+                console.log(err)
                 const embed = new MessageEmbed()
-                    .setColor(generateRandomColor.hex())
+                    .setColor('#FF0000')
                     .setTitle(`No results found for ${query}`)
                 message.channel.send({
                     embeds: [embed]

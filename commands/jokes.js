@@ -1,5 +1,4 @@
 const Memer = require('random-jokes-api')
-const generateRandomColor = require('generate-random-color')
 const { defaultMessage } = require('../helpers/default')
 
 module.exports = {
@@ -22,7 +21,7 @@ module.exports = {
                 return defaultMessage(message)
         }
         const embed = {
-            color: generateRandomColor.hex(),
+            color: '#FFCD01',
             title: query,
             description: boredObject,
         }

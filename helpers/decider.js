@@ -1,6 +1,7 @@
 const { bored } = require("../commands/jokes")
 const news = require("../commands/news")
 const { climate } = require("../commands/weather")
+const { crypto } = require("../commands/crypto")
 const { defaultMessage } = require("./default")
 
 module.exports = {
@@ -16,7 +17,7 @@ module.exports = {
                 bored(query, message)
                 break
             case 'crypto':
-
+                crypto(query, message)
                 break
             default:
                 defaultMessage(message)

@@ -6,11 +6,9 @@ module.exports = {
     crypto: function (query, message) {
         client.coins.fetch(query)
             .then(res => {
-                console.log(res)
                 const image = res.data.image.large
                 const rank = String(res.data.market_cap_rank)
                 const created = new Date(res.data.genesis_date).toLocaleString('en-us',{month:'short', year:'numeric'})
-                console.log(created)
                 const price = String(res.data.market_data.current_price.usd)
                 const totaltSupply = String(res.data.market_data.total_supply)
                 const maxSupply = String(res.data.market_data.max_supply)

@@ -5,7 +5,8 @@ const client = new CoinGecko()
 module.exports = {
     crypto: function (query, message) {
         client.coins.fetch(query)
-            .then(res => {
+            .then( res => {
+                console.log(res.data.genesis_date)
                 const image = res.data.image.large
                 const rank = String(res.data.market_cap_rank)
                 const created = new Date(res.data.genesis_date).toLocaleString('en-us',{month:'short', year:'numeric'})
@@ -63,7 +64,7 @@ module.exports = {
                 const embed = new MessageEmbed()
                 .setColor('#FF0000')
                 .setTitle('Something went wrong')
-                .setDescription("If the crypto you're looking for has a space in it's name example '*basic attention token*' replace the spaces with '**-**'")
+                .setDescription("If the crypto you're looking for has a space in it's name, example :- '*basic attention token*' replace the spaces with '**-**'")
                 message.channel.send({
                     embeds: [embed],
                 })

@@ -1,4 +1,4 @@
-const { MessageEmbed  } = require('discord.js')
+const { MessageEmbed } = require('discord.js')
 const NewsAPI = require('newsapi')
 require('dotenv').config()
 
@@ -37,7 +37,7 @@ module.exports = {
                     .setTitle(`No results found for ${query}`)
                 message.channel.send({
                     embeds: [embed]
-                });
+                })
             })
     }
 }

@@ -1,13 +1,13 @@
 {
-  "name": "discord-bot",
+  "name": "franky",
   "version": "1.0.0",
-  "description": "",
+  "description": "I am a discord bot.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sharan Sukesh",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",
